@@ -40,6 +40,11 @@ console.log('Song: ', anotherSong);
 console.log('Duration: ', duration);
 console.log('Author : ', author);
 
+//Destructuración Arrays
+const [, , trunks = 'Not found']: string[] = ['Goku', 'Vegeta'/*, 'Trunks'*/];
+
+
+console.log('Personaje 3: ', trunks);
 
 
 export { };
