@@ -1,5 +1,5 @@
 
-interface Product {
+export interface Product {
     description: string;
     price: number;
 }
@@ -25,7 +25,7 @@ interface TaxCalculationOptions {
 }
 
 //con el number, number, le decimos ya que devuelve 2 opciones
-function taxCalculation(options: TaxCalculationOptions): [number, number] {
+export function taxCalculation(options: TaxCalculationOptions): [number, number] {
     //Desestructura dentro para hacer mas visual el código
     const {tax, products } = options;
 
@@ -50,4 +50,3 @@ console.log('Tax', taxes);
 
 
 
-export { }
