@@ -22,13 +22,15 @@ export class Hero extends Person {
         public alterEgo: string,
         public age: number,
         public realName: string,
+        name: string,
+        address: string
     ) {
-        super(realName, 'New York');
+        super(name, address);
     }
 
 }
 
-const ironman = new Hero('IronMan', 45, 'Tony');
+const ironman = new Hero('IronMan', 45, 'Tony', 'Antonio Stark', 'New York');
 
 /*Da error, porque es privado, no deberia funcionar, pero funciona.
 console.log(ironman.address);*/
