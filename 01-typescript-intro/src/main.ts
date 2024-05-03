@@ -13,6 +13,7 @@ import { setupCounter } from './counter.ts'
 //import './topics/08-classes.ts'
 //import './topics/09-generics.ts'
 import './topics/10-decorators.ts'
+import './pruebas/1-prueba.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

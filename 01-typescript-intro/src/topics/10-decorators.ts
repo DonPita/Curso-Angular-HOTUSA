@@ -9,7 +9,7 @@ function classDecorator<T extends { new(...args: any[]): {} }>(
 }
 
 
-//@classDecorator
+@classDecorator
 export class SuperClass {
 
     public myProperty: string = 'Abc123';
