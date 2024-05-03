@@ -12,8 +12,9 @@ import { setupCounter } from './counter.ts'
 //import './topics/07-import-export.ts'
 //import './topics/08-classes.ts'
 //import './topics/09-generics.ts'
-import './topics/10-decorators.ts'
-import './pruebas/1-prueba.ts'
+//import './topics/10-decorators.ts'
+//import './pruebas/1-prueba.ts'
+import './topics/11-optional-chaining.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
