@@ -1,5 +1,6 @@
+import { Character } from './../interfaces/character.interface';
 import { Component } from '@angular/core';
-import { Character } from '../interfaces/character.interface';
+
 
 @Component({
   selector: 'app-dbz-main-page',
@@ -17,4 +18,9 @@ export class MainPageComponent {
     name: 'Vegeta',
     power: 7500
   }];
+
+  onNewCharacter( character: Character ):void {
+    console.log('MainPage');
+    console.log(character);
+  }
 }
