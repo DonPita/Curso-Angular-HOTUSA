@@ -3,7 +3,7 @@ import { CounterComponent } from "./components/counter/counter.component";
 
 
 
-@NgModule ({
+@NgModule({
   declarations: [
     CounterComponent
   ],
@@ -13,4 +13,4 @@ import { CounterComponent } from "./components/counter/counter.component";
 })
 
 
-export class CounterModule {}
+export class CounterModule { }
