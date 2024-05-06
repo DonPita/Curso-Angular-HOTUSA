@@ -1,10 +1,21 @@
 <h3>Listado de Héroes</h3>
 
-<h3>Héroe borrado <small class="text-danger"></small></h3>
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>Héroe borrado <small class="text-danger"> {{ deletedHero }} </small></h3>
+</div>
 
-<button class="btn btn-outline-danger">
+<!--
+  --Referencia al else del *ngIF se hace con #
+  --El ng-template no es un elemento html, no es como el div de arriba.
+-->
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada.</h3>
+</ng-template>
+
+<button *ngIf="heroNames.length > 0" class="btn btn-outline-danger" (click)="removeLastHero()">
   Borrar último héroe
 </button>
+
 
 
 <!--ngFor para hacer una lista de un array en html-->
