@@ -1,5 +1,4 @@
 import { DbzService } from '../services/dbz.service';
-import { Character } from './../interfaces/character.interface';
 import { Component } from '@angular/core';
 
 
