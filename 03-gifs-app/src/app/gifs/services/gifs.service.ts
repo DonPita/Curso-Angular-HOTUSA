@@ -1,3 +1,4 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
@@ -6,8 +7,10 @@ export class GifsService {
 
   private _tagsHistory: string[] = [];
   private apiKey: string = 'qMFuw6b7rv3fZibtxPYHFNBNdbXIiBhF';
+  private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
 
-  constructor() { }
+  //Nos traemos el cliente de http
+  constructor(private http: HttpClient) { }
 
 
   public get tagsHistory(): string[] {
@@ -28,8 +31,20 @@ export class GifsService {
   }
 
   public searchTag(tag: string): void {
-
     this.organizeHistory(tag);
+
+    const params = new HttpParams()
+      //Estos parametros son los que sacas con el postman
+      .set('api_key', this.apiKey)
+      .set('limit', '10')
+      .set('q', tag)
+
+
+    this.http.get(`${this.serviceUrl}/search`, { params })
+      .subscribe(resp => {
+
+        console.log(resp);
+      });
   }
 
 
