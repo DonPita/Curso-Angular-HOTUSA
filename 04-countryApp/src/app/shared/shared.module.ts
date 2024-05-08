@@ -22,10 +22,10 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     RouterModule
   ],
   exports: [
-    AboutPageComponent,
-    HomePageComponent,
+    /*AboutPageComponent,
+    HomePageComponent,*/
     SidebarComponent,
-    ContactPageComponent
+    /*ContactPageComponent*/
   ]
 })
 export class SharedModule { }
