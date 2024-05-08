@@ -6,8 +6,11 @@
   </div>
 
   <div class="col-12 pt-2">
-    <!--Listado de Gifs-->
-    <gifs-card-list></gifs-card-list>
+    <!--
+      Listado de Gifs
+      Componente CardList recibe la info del componente HomePage
+    -->
+    <gifs-card-list [gifs]="gifs"></gifs-card-list>
 
   </div>
 </div>
