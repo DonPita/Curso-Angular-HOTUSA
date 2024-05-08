@@ -34,7 +34,14 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this.tagsHistory.splice(0, 10);
+    this.saveLocalStorage();
   }
+
+private saveLocalStorage(): void {
+  //JSON.stringify transforma en string los arreglos
+  localStorage.setItem('history', JSON.stringify(this._tagsHistory) );
+}
+
 
   public searchTag(tag: string): void {
     this.organizeHistory(tag);
