@@ -23,9 +23,11 @@ export class LazyImageComponent implements OnInit {
     if (!this.url) throw new Error('URL is required');
   }
 
-
+  //Timeout de 1000ms para que tarden en cargar 1 segundo y se vea "mejor"
   onLoad(): void {
-    console.log('Image Loaded');
-    this.hasLoaded = true;
+    setTimeout(() => {
+      this.hasLoaded = true;
+    }, 1000);
+
   }
 }
