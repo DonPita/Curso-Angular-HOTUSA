@@ -1,18 +1,24 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Gif, SearchResponse } from '../interfaces/gifs.interfaces';
 
 @Injectable({ providedIn: 'root' })
 
 export class GifsService {
+  //Para guardar los Gif
+  public gifList: Gif[] = [];
 
+  //Array de historial de busqueda
   private _tagsHistory: string[] = [];
+  //Lo referente a la API y a la URL del Observable
   private apiKey: string = 'qMFuw6b7rv3fZibtxPYHFNBNdbXIiBhF';
   private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
+
 
   //Nos traemos el cliente de http
   constructor(private http: HttpClient) { }
 
-
+  //El get para no modificar el Array original
   public get tagsHistory(): string[] {
     return [...this._tagsHistory]; //Duplicado, asi no se referencia.
   }
@@ -37,13 +43,14 @@ export class GifsService {
       //Estos parametros son los que sacas con el postman
       .set('api_key', this.apiKey)
       .set('limit', '10')
-      .set('q', tag)
+      .set('q', tag);
 
-
-    this.http.get(`${this.serviceUrl}/search`, { params })
+    //Observable, SearchResponse para indicarle de que tipo va a ser
+    this.http.get<SearchResponse>(`${this.serviceUrl}/search`, { params })
       .subscribe(resp => {
 
-        console.log(resp);
+        this.gifList = resp.data;
+        console.log({ gifs: this.gifList });
       });
   }
 
