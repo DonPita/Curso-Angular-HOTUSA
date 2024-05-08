@@ -2,6 +2,8 @@
 
   <img [src]="url" [alt]="url" class="card-img-top" (load)="onLoad()"
     [ngStyle]="{ display: hasLoaded ? '' : 'none'}"/>
+    <!--si hasLoaded es true, enseña la imagen : si es false enseña la de
+    abajo, que es el asset de carga-->
 
   <img *ngIf="!hasLoaded"  src="assets/loader.svg" height="35" width="35" class="mt-3">
 
