@@ -16,7 +16,10 @@ export class GifsService {
 
 
   //Nos traemos el cliente de http
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.loadLocalStorage();
+    console.log('Gifs Service Ready');
+  }
 
   //El get para no modificar el Array original
   public get tagsHistory(): string[] {
@@ -37,12 +40,23 @@ export class GifsService {
     this.saveLocalStorage();
   }
 
-private saveLocalStorage(): void {
-  //JSON.stringify transforma en string los arreglos
-  localStorage.setItem('history', JSON.stringify(this._tagsHistory) );
-}
+  //Almacenamiento local
+  private saveLocalStorage(): void {
+    //JSON.stringify transforma en string los arreglos
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory));
+  }
 
+  //Lo vamos a llamar desde el constructor
+  private loadLocalStorage(): void {
+    if (!localStorage.getItem('history')) { return };
+    this._tagsHistory = JSON.parse(localStorage.getItem('history')!);
+    if (this.tagsHistory.length > 0) {
+      this.searchTag(this._tagsHistory[0]);
+    }
 
+  }
+
+  //Busqueda
   public searchTag(tag: string): void {
     this.organizeHistory(tag);
 
