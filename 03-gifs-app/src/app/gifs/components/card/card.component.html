@@ -1,14 +1,17 @@
+<div class="card mb-2 text-center bg-dark text-center">
 
-  <div class="card mb-2 text-center bg-dark">
-    <!--SRC y ALT entre corchetes para indicar que vienen referenciados-->
-    <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top">
+  <shared-lazy-image></shared-lazy-image>
+  <!--SRC y ALT entre corchetes para indicar que vienen referenciados-->
+  <!--<img
+  [src]="gif.images.downsized_medium.url"
+  [alt]="gif.title"
+  class="card-img-top"
+  >-->
 
-    <div class="card-body text-white">
-      <p class="card-text">
-        {{ gif.title }}
-      </p>
-    </div>
-
+  <div class="card-body text-white">
+    <p class="card-text">
+      {{ gif.title  || 'No title' }}
+    </p>
   </div>
 
-
+</div>
