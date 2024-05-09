@@ -7,7 +7,7 @@ import { CountryPageComponent } from './pages/country-page/country-page.componen
 import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CountryTableComponent } from './components/country-table/country-table.component';
-import { RouterModule } from '@angular/router';
+
 
 
 
@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     CountriesRoutingModule,
     SharedModule,
-    RouterModule
+
   ]
 })
 export class CountriesModule { }

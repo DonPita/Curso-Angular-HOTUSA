@@ -15,10 +15,10 @@ export class ByCountryPageComponent {
   //Se inicializa en el constructor el servicio para poder llamar al método
   constructor(private countriesService: CountriesService) { }
 
-  searchByCountry(term: string) {
+  searchByCountry(term: string):void {
     this.countriesService.searchCountry(term)
       .subscribe(countries => {
-        this.countries = countries
+        this.countries = countries;
       });
   }
 
