@@ -4,6 +4,7 @@
   </div>
 </ng-template>
 
+<!--Con el ngIf else evitamos alertas sobre que country? puede ser nulo-->
 <div *ngIf="country; else loading">
   <div class="row">
     <div class="col-12">
@@ -33,9 +34,12 @@
         </li>
       </ul>
     </div>
+
     <div class="row mt-2">
+
       <div class="col">
         <h3>Traducciones</h3>
+
         <div class="d-flex flex-wrap">
           <span class="badge bg-primary m-1">{{ country.translations['spa'].common }}</span>
           <span class="badge bg-primary m-1">{{ country.translations['ara'].common }}</span>
@@ -56,7 +60,11 @@
           <span class="badge bg-primary m-1">{{ country.translations['swe'].common }}</span>
           <span class="badge bg-primary m-1">{{ country.translations['tur'].common }}</span>
         </div>
+
       </div>
+
     </div>
+
   </div>
+
 </div>
